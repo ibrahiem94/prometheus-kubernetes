@@ -37,10 +37,10 @@ spec:
         image: k8s.gcr.io/addon-resizer:1.7
         resources:
           limits:
-            cpu: 100m
+            cpu: 30m
             memory: 30Mi
           requests:
-            cpu: 100m
+            cpu: 30m
             memory: 30Mi
         env:
           - name: MY_POD_NAME
@@ -54,9 +54,9 @@ spec:
         command:
           - /pod_nanny
           - --container=kube-state-metrics
-          - --cpu=100m
+          - --cpu=30m
           - --extra-cpu=1m
-          - --memory=100Mi
+          - --memory=30Mi
           - --extra-memory=2Mi
           - --threshold=5
           - --deployment=kube-state-metrics
