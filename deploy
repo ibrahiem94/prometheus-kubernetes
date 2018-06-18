@@ -414,7 +414,7 @@ if [[ "$(kubectl get pods -n kube-system | grep scheduler)" ]]; then
   echo -e "${ORANGE}Self hosted"
   tput sgr0
   kubectl apply -f manifests/k8s/self-hosted
-  kubectl apply -f manifests/prometheus/self-hosted
+  kubectl apply -f manifests/prometheus/self-hosted --namespace "$NAMESPACE"
 else
   echo
   echo -e "${ORANGE}Skipping rules for self hosted clusters "
