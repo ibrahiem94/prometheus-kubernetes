@@ -21,12 +21,9 @@ spec:
         - containerPort: 8080
           name: http
         resources:
-          limits:
-            cpu: 50m
-            memory: 50Mi
           requests:
             cpu: 50m
-            memory: 50Mi
+            memory: 20Mi
       serviceAccountName: prometheus-operator
       nodeSelector:
         node_label_key: node_label_value
